@@ -48,7 +48,7 @@ function(n, steps, size, mu) {
   }
 
   ## define progress bar
-  pb <- txtProgressBar(max = n, style = 3)
+  pb <- txtProgressBar(max = steps, style = 3)
 
   ## run through cycles
   for (i in seq(steps)) {
