@@ -273,7 +273,7 @@ for (i in seq(n)) {
   ## STEP 14: birth of new pigs
   pig_new <-
     rbind(pig_new,
-          data.frame(age = birth(sum(is_slaughtered)),
+          data.frame(age = rep(0, sum(is_slaughtered)),
                      cysti = 0,
                      cysti_immature = 0,
                      time_since_infection = 0,
