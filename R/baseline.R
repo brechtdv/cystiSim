@@ -47,6 +47,9 @@ function(n, steps, size, mu) {
     pigs <- rbind(pigs, data.frame(age = rep(0, n)))
   }
 
+  ## define progress bar
+  pb <- txtProgressBar(max = n, style = 3)
+
   ## run through cycles
   for (i in seq(steps)) {
     ## ageing of pigs
@@ -61,7 +64,13 @@ function(n, steps, size, mu) {
     ## new piglets get born
     ## number of births equal to number of killed pigs
     pigs <- rbind(pigs, data.frame(age = rep(0, sum(kill))))
+
+    ## update progress bar
+    setTxtProgressBar(pb, i)
   }
+
+  ## close progress bar
+  close(pb)
 
   ## return pigs dataframe
   return(pigs)
@@ -69,7 +78,7 @@ function(n, steps, size, mu) {
 
 ## random baseline pigs
 random_baseline_pig <-
-function(n, p) {
+function(n, p, p.high) {
   ## model age structure of pig population
   pigs_age <- pig_age_model(n / 6, 500, 0.70, 80)$age
 
