@@ -1,10 +1,9 @@
-## bd
+## cystiSim
 
-A suite of helper functions; including utils and summary statistics.
+An agent-based model for _Taenia solium_ transmission and control
 
-The easiest way to install the development version of the `bd` package is via the `devtools` package:
+Download and Install:
+=====================
 
-    install.packages("devtools")  # if needed..
-    library("devtools")
-    install_github("bd", "brechtdv")
-	library("bd")
+    devtools::install_github("bd", "brechtdv/cystiSim")
+	library("cystiSim")
