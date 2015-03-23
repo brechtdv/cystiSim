@@ -3,6 +3,7 @@
 ## -------------------------------------------------------------------------#
 ## GENERATE RANDOM BASELINE ------------------------------------------------#
 
+## simple random baseline for humans
 random_baseline_man <-
 function(n, p) {
   data.frame(age = round(runif(n, 0, 80) * 12),
@@ -14,6 +15,25 @@ function(n, p) {
              time_since_contamination = 0)
 }
 
+## slaughter function
+slaughter <-
+function(age, size, mu) {
+  ## if age below 6, do not kill
+  kill <- rep(0, length(age))
+
+  ## if age equal 36, always kill
+  kill[age == 36] <- 1
+
+  ## if age in between, kill probabilistically
+  kill_age <- age >= 6 & age < 36
+  kill[kill_age] <-
+    rbinom(sum(kill_age), 1, pnbinom(age[kill_age] - 6, size, mu = mu))
+
+  ## return results
+  return(kill)
+}
+
+## model pig age structure
 pig_age_model <-
 function(n, steps, size, mu) {
   ## create population with 'n' births per month
@@ -47,6 +67,7 @@ function(n, steps, size, mu) {
   return(pigs)
 }
 
+## random baseline pigs
 random_baseline_pig <-
 function(n, p) {
   ## model age structure of pig population
