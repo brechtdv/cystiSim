@@ -1,0 +1,81 @@
+### CYSTISIM: AGENT BASED TAENIA SOLIUM TRANSMISSION MODEL
+
+## -------------------------------------------------------------------------#
+## GENERATE RANDOM BASELINE ------------------------------------------------#
+
+random_baseline_man <-
+function(n, p) {
+  data.frame(age = round(runif(n, 0, 80) * 12),
+             sex = sample(c("male", "female"), n, replace = TRUE),
+             taenia = rbinom(n, 1, p),
+             taenia_immature = 0,
+             time_since_infection = 0,
+             environment = 0,
+             time_since_contamination = 0)
+}
+
+pig_age_model <-
+function(n, steps, size, mu) {
+  ## create population with 'n' births per month
+  pigs <- data.frame(age = birth(n))
+
+  for (i in seq(5)) {
+    ## ageing of pigs
+    pigs$age <- pigs$age + 1
+
+    ## new piglets get born
+    pigs <- rbind(pigs, data.frame(age = birth(n)))
+  }
+
+  ## run through cycles
+  for (i in seq(steps)) {
+    ## ageing of pigs
+    pigs$age <- pigs$age + 1
+
+    ## slaughter of pigs
+    kill <- slaughter(pigs$age, size, mu)
+
+    ## remove slaughtered pigs from population
+    pigs <- subset(pigs, !kill)
+
+    ## new piglets get born
+    ## number of births equal to number of killed pigs
+    pigs <- rbind(pigs, data.frame(age = birth(sum(kill))))
+  }
+
+  ## return pigs dataframe
+  return(pigs)
+}
+
+random_baseline_pig <-
+function(n, p) {
+  ## model age structure of pig population
+  pigs_age <- pig_age_model(n / 6, 500, 0.70, 80)$age
+
+  ## identify pigs that are 3 months or older
+  ## only these pigs are old enough to appear Ag positive
+  pigs_inf <- pigs_age > 3
+
+  ## randomly infect pigs
+  cysti <- rep(0, length(pigs_inf))
+  cysti[pigs_inf] <- rbinom(sum(pigs_inf), 1, p)
+
+  ## randomly assign infection intensity to infected pigs
+  intensity <- rep(0, length(pigs_inf))
+  intensity[cysti == 1] <-
+    sample(c("H", "L"), sum(cysti), TRUE, c(p.high, 1 - p.high))
+
+  ## create 'pigs' dataframe
+  pigs <-
+    data.frame(age = pigs_age,
+               cysti = cysti,
+               cysti_immature = 0,
+               time_since_infection = 0,
+               intensity = intensity,
+               immunity = 0,
+               time_since_vaccination = NA,
+               slaughtered = 0)
+
+  ## return 'pigs' dataframe
+  return(pigs)
+}
