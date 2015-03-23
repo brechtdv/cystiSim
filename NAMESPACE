@@ -1,6 +1,9 @@
 import(ggplot2)
+
+export(random_baseline_man, random_baseline_pig)
 export(initiate)
 export(do_mda, do_oxf, do_vac)
+
 S3method(update, cystiSim)
 S3method(print, cystiSim)
 S3method(plot, cystiSim)
