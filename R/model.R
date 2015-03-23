@@ -258,7 +258,7 @@ for (i in seq(n)) {
   pig_new$slaughtered <- is_slaughtered
 
   ## STEP 11: ageing of pigs not slaughtered in current cycle
-  pig_new$age <- ageing(pig_new$age)
+  pig_new$age <- pig_new$age + 1
 
   ## STEP 12: waning of immunity of pigs not slaughtered in current cycle
   is_immune <- pig_new$immunity > 0
