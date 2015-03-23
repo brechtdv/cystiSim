@@ -17,14 +17,14 @@ function(n, p) {
 pig_age_model <-
 function(n, steps, size, mu) {
   ## create population with 'n' births per month
-  pigs <- data.frame(age = birth(n))
+  pigs <- data.frame(age = rep(0, n))
 
   for (i in seq(5)) {
     ## ageing of pigs
     pigs$age <- pigs$age + 1
 
     ## new piglets get born
-    pigs <- rbind(pigs, data.frame(age = birth(n)))
+    pigs <- rbind(pigs, data.frame(age = rep(0, n)))
   }
 
   ## run through cycles
@@ -40,7 +40,7 @@ function(n, steps, size, mu) {
 
     ## new piglets get born
     ## number of births equal to number of killed pigs
-    pigs <- rbind(pigs, data.frame(age = birth(sum(kill))))
+    pigs <- rbind(pigs, data.frame(age = rep(0, sum(kill))))
   }
 
   ## return pigs dataframe
