@@ -2,7 +2,7 @@ Package: cystiSim
 Type: Package
 Title: Agent-based model for Taenia solium transmission and control
 Version: 0.0.1
-Date: 2015-03-08
+Date: 2015-03-24
 Authors@R: c(person("Brecht", "Devleesschauwer",
                     role = c("aut", "cre"),
                     email = "Brecht.Devleesschauwer@UGent.be"),
@@ -12,4 +12,4 @@ Maintainer: Brecht Devleesschauwer <Brecht.Devleesschauwer@UGent.be>
 Description: cystiSim is an agent-based model for Taenia solium transmission and control
 Depends: R (>= 3.1.0)
 License: GPL (>= 2)
-LazyData: yes
+LazyData: true
