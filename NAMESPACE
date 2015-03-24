@@ -1,8 +1,12 @@
 import(ggplot2)
 
-export(random_baseline_man, random_baseline_pig)
+export(prevalence)
+export(random_baseline_man)
+export(random_baseline_pig)
 export(initiate)
-export(do_mda, do_oxf, do_vac)
+export(do_mda)
+export(do_oxf)
+export(do_vac)
 
 S3method(update, cystiSim)
 S3method(print, cystiSim)
