@@ -13,7 +13,7 @@
     Package:    \tab  cystiSim\cr
     Type:       \tab  Package\cr
     Version:    \tab  0.0.1\cr
-    Date:       \tab  2015-03-08\cr
+    Date:       \tab  2015-03-23\cr
     Authors:    \tab  Brecht Devleesschauwer, Uffe Christian Braae\cr
     Maintainer: \tab  \email{Brecht.Devleesschauwer@UGent.be}\cr
     Depends:    \tab  R (>= 3.1.0)\cr
@@ -23,18 +23,22 @@
 
 Available functions in the \pkg{cystiSim} package:
   \tabular{ll}{
+    \strong{baseline}\cr
+    \code{\link{random_baseline_man}}  \tab Generate a random baseline human population.\cr
+    \code{\link{random_baseline_pig}}  \tab Generate a random baseline pig population.\cr\cr
+    
     \strong{model}\cr
-    \code{\link{initiate}}        \tab Info.\cr
-    \code{\link{update}}          \tab Info.\cr\cr
+    \code{\link{initiate}}        \tab Initiate a \code{cystiSim} model.\cr
+    \code{\link{update}}          \tab Update a \code{cystiSim} model.\cr\cr
 
     \strong{interventions}\cr
-    \code{\link{do_mda}}          \tab Info.\cr
-    \code{\link{do_oxf}}          \tab Info.\cr
-    \code{\link{do_vac}}          \tab Info.\cr\cr
+    \code{\link{do_mda}}          \tab Do human mass drug administration.\cr
+    \code{\link{do_oxf}}          \tab Do pig oxfendazole treatment.\cr
+    \code{\link{do_vac}}          \tab Do pig vaccination.\cr\cr
 
     \strong{S3 methods}\cr
-    \code{\link{print.cystiSim}}  \tab Info.\cr
-    \code{\link{plot.cystiSim}}   \tab Info.\cr
+    \code{\link{print}}  \tab Show current prevalences.\cr
+    \code{\link{plot}}   \tab Plot prevalences across time.\cr
   }
 }
 

@@ -20,5 +20,3 @@ do_mda(x, efficacy, coverage, min.age = 0, max.age = Inf)
 }
 
 \author{\email{Brecht.Devleesschauwer@UGent.be}}
-
-\seealso{Other interventions: \code{\link{do_oxf}}, \code{\link{do_vac}}}
