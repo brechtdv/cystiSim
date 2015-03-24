@@ -15,21 +15,40 @@ function(x, from = 200, to = NA) {
 }
 
 plot.cystiSim <-
-function(x, show = c("cysti", "taenia"), from = 1, to = NA) {
-  show <- match.arg(show)
-  if (is.na(to)) to <- nrow(x$out)
-
+function(x, show = c("PC", "PR", "HT", "EN"),
+         start = 0, from = 1, to = NA) {
+  ## define census labels and groups
   label <- c("PC", "P(H)", "P(L)", "PCI", "PR",
              "HT", "HT(inf)", "HT(ch)", "HT(ad)", "EN")
+  group <- c(rep("pig", 5), rep("man", 5))
 
-  id <-
-    switch(show,
-           cysti  = c(1, 4:5),
-           taenia = 6:10)
+  ## select labels and groups to show
+  id_col <- match(show, label)
+  lab <- factor(label[id_col], levels = label[id_col])
+  grp <- factor(group[id_col], levels = unique(group[id_col]))
 
-  par(mar = c(4, 4, 1, 1))
-  matplot(seq(from, to), x$out[seq(from, to), id],
-          type = "l", lty = 1)
-  legend("topright", cex = .5,
-         label[id], col = seq_along(id), lty = 1)
+  ## define extraction points
+  if (is.na(to)) to <- nrow(x$out)
+  id_row <- seq(from, to)
+
+  ## extract census data; force matrix
+  out <- as.matrix(x$out[id_row, id_col])
+
+  ## define months
+  months <- seq(nrow(out)) - start
+
+  ## create ggplot data.frame
+  df <- data.frame(p = c(out),
+                   m = rep(months, times = ncol(out)),
+                   lab = rep(lab, each = nrow(out)),
+                   grp = rep(grp, each = nrow(out)))
+
+  ## build plot function
+  ggplot(df, aes(x = m, y = p)) +
+    geom_line(aes(col = lab)) +
+    scale_colour_manual(values = seq(10)[id_col]) +
+    facet_grid(grp ~ ., scales = "free", as.table = F) +
+    scale_x_continuous("month") +
+    scale_y_continuous("proportion") +
+    theme_bw()
 }
