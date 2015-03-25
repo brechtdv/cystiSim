@@ -4,7 +4,7 @@ An agent-based model for _Taenia solium_ transmission and control
 
 #### Download and install
 
-    devtools::install_github("bd", "brechtdv/cystiSim")
+    devtools::install_github("brechtdv/cystiSim")
 	library("cystiSim")
 
 #### Getting started
