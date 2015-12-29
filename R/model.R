@@ -205,12 +205,12 @@ function(man, pig,
 ## UPDATE MODEL ------------------------------------------------------------#
 
 update.cystiRun <-
-function(x, n = 1200) {
+function(x, n = 1200, verbose = TRUE) {
 
 ## MODEL
 out <- matrix(nrow = n, ncol = 10)
 
-pb <- txtProgressBar(max = n, style = 3)
+if (verbose) pb <- txtProgressBar(max = n, style = 3)
 
 for (i in seq(n)) {
 
@@ -302,11 +302,11 @@ for (i in seq(n)) {
   out[i, ] <- census(x)
 
   ## update progress bar
-  setTxtProgressBar(pb, i)
+  if (verbose) setTxtProgressBar(pb, i)
 }
 
 ## close progress bar
-close(pb)
+if (verbose) close(pb)
 
 ## combine old and new census
 x$out <- rbind(x$out, out)
