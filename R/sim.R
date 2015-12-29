@@ -32,7 +32,6 @@ function(n = 100, mod, main = NULL) {
 
   ## return 'cystiSims' object
   return(sim)
-)
 }
 
 
