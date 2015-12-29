@@ -11,7 +11,7 @@ export(initiate)
 export(do_mda)
 export(do_oxf)
 export(do_vac)
-#export(fit)
+export(fit)
 export(cystiSim)
 export(report)
 
