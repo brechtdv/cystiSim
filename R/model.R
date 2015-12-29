@@ -3,6 +3,12 @@
 ## -------------------------------------------------------------------------#
 ## HELPER FUNCTIONS --------------------------------------------------------#
 
+## expit = inverse logit
+expit <-
+function(x) {
+  exp(x)/(1 + exp(x))
+}
+
 ## reporter function: prevalence
 prevalence <-
 function(x) {
@@ -80,7 +86,7 @@ function(man, pig, ph2m, pl2m, age.coef) {
   age_max <- max(man$age[HS] / 12)
 
   ## age-specific odds of infection defined from logistic regression
-  odds <- bd::expit(age.coef[1] + seq(0, age_max) * age.coef[2])
+  odds <- expit(age.coef[1] + seq(0, age_max) * age.coef[2])
 
   ## tabulate age distribution of current dataframe
   age_dist <- table(cut(man$age[HS] / 12, seq(0, age_max + 1), right = FALSE))
@@ -167,17 +173,22 @@ function(pig, man, m2p, e2p) {
 ## INITIATE MODEL ----------------------------------------------------------#
 
 initiate <-
-function(man, pig, ph2m, pl2m, m2p, e2p, age.coef = c(0, 0)) {
+function(man, pig,
+         ph2m, pl2m, m2p, e2p, age.coef = c(0, 0),
+         slaughter = slaughter_binom,
+         slaughter.args = list(min = 6, max = 36, mu = 0.70, size = 80)) {
   ## create 'cystiSim' object
   x <-
   list(man = man,
        pig = pig,
        out = NULL,
-       settings = list(age_coef = age.coef,
-                       ph2m = ph2m,
-                       pl2m = pl2m,
-                       m2p = m2p,
-                       e2p = e2p))
+       par = list(age_coef = age.coef,
+                  ph2m = ph2m,
+                  pl2m = pl2m,
+                  m2p = m2p,
+                  e2p = e2p),
+       slaughter = list(f = slaughter,
+                        args = slaughter.args))
 
   ## take baseline population census
   x$out <- matrix(census(x), ncol = 10)
@@ -234,7 +245,7 @@ for (i in seq(n)) {
 
   ## STEP 05: new HT, based on slaughtered infectious pigs of previous cycle
   man_new <- infect_man(x$man, x$pig,
-                        x$settings$ph2m, x$settings$pl2m, x$settings$age_coef)
+                        x$par$ph2m, x$par$pl2m, x$par$age_coef)
 
   ## STEP 06: remove slaughtered pigs of previous cycle
   x$pig <- subset(x$pig, slaughtered == 0)
@@ -251,10 +262,11 @@ for (i in seq(n)) {
   x$pig$time_since_infection[is_infectious] <- 0
 
   ## STEP 09: new PI, based on HT & ENVIR of previous cycle
-  pig_new <- infect_pig(x$pig, x$man, x$settings$m2p, x$settings$e2p)
+  pig_new <- infect_pig(x$pig, x$man, x$par$m2p, x$par$e2p)
 
   ## STEP 10: slaughter pigs of previous cycle
-  is_slaughtered <- slaughter(pig_new$age, 0.70, 80)
+  is_slaughtered <-
+    do.call(x$slaughter$f, c(list(age = pig_new$age), x$slaughter$args))
   pig_new$slaughtered <- is_slaughtered
 
   ## STEP 11: ageing of pigs not slaughtered in current cycle
