@@ -115,6 +115,11 @@ function(sim) {
               size = 4, hjust = 1, vjust = 1)
 }
 
+report <-
+function(sim, ...) {
+  UseMethod("report")
+}
+
 report.cystiSims <-
 function(sim, name = "cystiSim") {
   ## temporary 'mod' file
