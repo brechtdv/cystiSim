@@ -1,4 +1,16 @@
+cystiSim 0.0.2
+==============
+
+* introduce `magrittr` style model definitions
+
+* introduce functionalities and methods for multiple `cystiSim` simulations
+
+* introduce functionalities for fitting models to data
+
+* update model to make `slaughter` function generic
+
+
 cystiSim 0.0.1
 ==============
 
-* The first version.
+* the first version
