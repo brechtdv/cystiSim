@@ -11,7 +11,7 @@ export(do_mda)
 export(do_oxf)
 export(do_vac)
 #export(fit)
-export(sim)
+export(cystiSim)
 export(report)
 
 S3method(update, cystiSim)

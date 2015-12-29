@@ -3,7 +3,7 @@
 ## -------------------------------------------------------------------------#
 ## MAIN SIMULATION FUNCTION ------------------------------------------------#
 
-sim <-
+cystiSim <-
 function(n = 100, mod, main = NULL) {
   ## predefine list of simulations
   out <- vector("list", n)
