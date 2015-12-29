@@ -28,7 +28,7 @@ function(n = 100, mod, main = NULL) {
                     eff_vac = eff_vac, cov_vac = cov_vac))
 
   ## add S3 class 'cystiSims'
-  class(sim) <- "cystiSims"
+  class(sim) <- "cystiSim"
 
   ## return 'cystiSims' object
   return(sim)
@@ -38,7 +38,7 @@ function(n = 100, mod, main = NULL) {
 ## -------------------------------------------------------------------------#
 ## cystiSims METHODS -------------------------------------------------------#
 
-print.cystiSims <-
+print.cystiSim <-
 function(sim) {
   mod <- strsplit(as.character(sim$mod)[2], "%>%")[[1]]
   mod <- gsub("\n", "", mod)
@@ -52,7 +52,7 @@ function(sim) {
   cat("\n")
 }
 
-summary.cystiSims <-
+summary.cystiSim <-
 function(sim, round = 3) {
   sim_mx <- sapply(sim$out, as.matrix)
   m <- nrow(sim_mx) / ncol(sim$out[[1]])
@@ -68,7 +68,7 @@ function(sim, round = 3) {
   return(round(out, round))
 }
 
-plot.cystiSims <-
+plot.cystiSim <-
 function(sim) {
   lab <- factor(c("PC", "PR", "HT"), c("PC", "PR", "HT"))
   grp <- factor(c("pig", "pig", "human"), c("pig", "human"))
@@ -120,7 +120,7 @@ function(sim, ...) {
   UseMethod("report")
 }
 
-report.cystiSims <-
+report.cystiSim <-
 function(sim, name = "cystiSim") {
   ## temporary 'mod' file
   ## write model
@@ -132,7 +132,7 @@ function(sim, name = "cystiSim") {
   sink()
 
   ## knit PDF
-  knitr::knit2pdf("cystiSim.Rnw")
+  knit2pdf(system.file("cystiSim.Rnw", package = "cystiSim"))
 
   ## rename PDF
   file.rename("cystiSim.pdf",

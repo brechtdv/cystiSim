@@ -177,7 +177,7 @@ function(man, pig,
          ph2m, pl2m, m2p, e2p, age.coef = c(0, 0),
          slaughter = slaughter_nbinom,
          slaughter.args = list(min = 6, max = 36, mu = 0.70, size = 80)) {
-  ## create 'cystiSim' object
+  ## create 'cystiRun' object
   x <-
   list(man = man,
        pig = pig,
@@ -193,10 +193,10 @@ function(man, pig,
   ## take baseline population census
   x$out <- matrix(census(x), ncol = 10)
 
-  ## add S3 class 'cystiSim'
-  class(x) <- "cystiSim"
+  ## add S3 class 'cystiRun'
+  class(x) <- "cystiRun"
 
-  ## return 'cystiSim' object
+  ## return 'cystiRun' object
   return(x)
 }
 
@@ -204,7 +204,7 @@ function(man, pig,
 ## -------------------------------------------------------------------------#
 ## UPDATE MODEL ------------------------------------------------------------#
 
-update.cystiSim <-
+update.cystiRun <-
 function(x, n = 1200) {
 
 ## MODEL
@@ -311,6 +311,6 @@ close(pb)
 ## combine old and new census
 x$out <- rbind(x$out, out)
 
-## return updated 'cystiSim' object
+## return updated 'cystiRun' object
 return(x)
 }

@@ -1,6 +1,6 @@
-### CYSTISIM METHODS
+### CYSTIRUN METHODS
 
-print.cystiSim <-
+print.cystiRun <-
 function(x, from = 200, to = NA) {
   if (is.na(to)) to <- nrow(x$out)
   p <- colMeans(x$out[seq(from, to), ])
@@ -14,7 +14,7 @@ function(x, from = 200, to = NA) {
   cat("E:  ", round(p[10], 4), "\n")
 }
 
-plot.cystiSim <-
+plot.cystiRun <-
 function(x, show = c("PC", "PR", "HT", "EN"),
          start = 0, from = 1, to = NA) {
   ## define census labels and groups
