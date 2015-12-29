@@ -175,7 +175,7 @@ function(pig, man, m2p, e2p) {
 initiate <-
 function(man, pig,
          ph2m, pl2m, m2p, e2p, age.coef = c(0, 0),
-         slaughter = slaughter_binom,
+         slaughter = slaughter_nbinom,
          slaughter.args = list(min = 6, max = 36, mu = 0.70, size = 80)) {
   ## create 'cystiSim' object
   x <-
