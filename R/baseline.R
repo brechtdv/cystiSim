@@ -15,25 +15,42 @@ function(n, p) {
              time_since_contamination = 0)
 }
 
-## slaughter function
-slaughter <-
-function(age, size, mu) {
-  ## if age below 6, do not kill
+## slaughter function - default
+slaughter_nbinom <-
+function(age, min, max, size, mu) {
+  ## if age below 'min', do not kill
   kill <- rep(0, length(age))
 
-  ## if age equal 36, always kill
-  kill[age == 36] <- 1
+  ## if age larger or equal 'max', always kill
+  kill[age >= max] <- 1
 
   ## if age in between, kill probabilistically
-  kill_age <- age >= 6 & age < 36
+  kill_age <- age >= min & age < max
   kill[kill_age] <-
-    rbinom(sum(kill_age), 1, pnbinom(age[kill_age] - 6, size, mu = mu))
+    rbinom(sum(kill_age), 1, pnbinom(age[kill_age] - min, size, mu = mu))
 
   ## return results
   return(kill)
 }
 
-## model pig age structure
+## slaughter function - simplified
+slaughter_binom <-
+function(age, min, max, p) {
+  ## if age below 'min', do not kill
+  kill <- rep(0, length(age))
+
+  ## if age larger or equal 'max', always kill
+  kill[age >= max] <- 1
+
+  ## if age in between, kill probabilistically
+  kill_age <- age >= min & age < max
+  kill[kill_age] <- rbinom(sum(kill_age), 1, p)
+
+  ## return results
+  return(kill)
+}
+
+## model pig age structure - default
 pig_age_model <-
 function(n, steps, size, mu) {
   ## create population with 'n' births per month
@@ -55,8 +72,8 @@ function(n, steps, size, mu) {
     ## ageing of pigs
     pigs$age <- pigs$age + 1
 
-    ## slaughter of pigs
-    kill <- slaughter(pigs$age, size, mu)
+    ## slaughter of pigs - default
+    kill <- slaughter_nbinom(pigs$age, min = 6, max = 36, size, mu)
 
     ## remove slaughtered pigs from population
     pigs <- subset(pigs, !kill)
