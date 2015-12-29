@@ -4,7 +4,7 @@
 ## FIT MODEL PARAMETERS ----------------------------------------------------#
 
 fit <-
-function(n.sim, n.update, target,
+function(n.sim, n.update, target, limit,
          man, pig, ph2m, pl2m, m2p, e2p, age.coef = c(0, 0),
          slaughter = slaughter_nbinom,
          slaughter.args = list(min = 6,  max = 36, mu = 0.7, size = 80)) {
@@ -19,9 +19,8 @@ function(n.sim, n.update, target,
                      "HT", "HT(inf)", "HT(ch)", "HT(ad)", "EN", "HT(tot)",
                      "DEV")
 
-  ## settings
+  ## initiate counter
   i <- 0
-  limit <- 0.10
 
   ## initiate progress bar
   pb <- txtProgressBar(max = n.sim, style = 3)
