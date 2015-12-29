@@ -1,5 +1,6 @@
 import(ggplot2)
 import(magrittr)
+importFrom(knitr, knit2pdf)
 
 export(prevalence)
 export(random_baseline_man)
