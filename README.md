@@ -1,4 +1,4 @@
-### cystiSim
+## cystiSim
 
 [![Travis-CI Build Status](https://travis-ci.org/brechtdv/cystiSim.svg?branch=master)](https://travis-ci.org/brechtdv/cystiSim)
 
