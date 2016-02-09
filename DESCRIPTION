@@ -10,6 +10,7 @@ Authors@R: c(person("Brecht", "Devleesschauwer",
 Author: Brecht Devleesschauwer [aut, cre], Uffe Christian Braae [aut]
 Maintainer: Brecht Devleesschauwer <brechtdv@gmail.com>
 Description: cystiSim is an agent-based model for Taenia solium transmission and control
-Depends: R (>= 3.1.0), ggplot2, magrittr
+Depends: R (>= 3.2.0), ggplot2, magrittr
+Imports: knitr
 License: GPL (>= 2)
 LazyData: true
