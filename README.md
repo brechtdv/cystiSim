@@ -1,11 +1,15 @@
 ### cystiSim
 
+[![Travis-CI Build Status](https://travis-ci.org/brechtdv/cystiSim.svg?branch=master)](https://travis-ci.org/brechtdv/cystiSim)
+
 An agent-based model for _Taenia solium_ transmission and control
 
 #### Download and install
 
-    devtools::install_github("brechtdv/cystiSim")
-	library("cystiSim")
+```r
+devtools::install_github("brechtdv/cystiSim")
+library("cystiSim")
+```
 
 #### Getting started
 
