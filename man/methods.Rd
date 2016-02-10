@@ -1,4 +1,4 @@
-\name{do_mda}
+\name{cystiRun-methods}
 \alias{do_mda}
 
 \title{Do human Mass Drug Administration (MDA)}
@@ -19,4 +19,4 @@ do_mda(x, efficacy, coverage, min.age = 0, max.age = Inf)
   \item{max.age}{Maximum age for MDA, in months. Defaults to \code{Inf}, i.e., no upper age limit.}
 }
 
-\author{\email{Brecht.Devleesschauwer@UGent.be}}
+\author{\email{brechtdv@gmail.com}}

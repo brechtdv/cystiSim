@@ -12,11 +12,11 @@
   \tabular{ll}{
     Package:    \tab  cystiSim\cr
     Type:       \tab  Package\cr
-    Version:    \tab  0.0.1\cr
-    Date:       \tab  2015-03-23\cr
+    Version:    \tab  0.0.3\cr
+    Date:       \tab  2016-02-10\cr
     Authors:    \tab  Brecht Devleesschauwer, Uffe Christian Braae\cr
-    Maintainer: \tab  \email{Brecht.Devleesschauwer@UGent.be}\cr
-    Depends:    \tab  R (>= 3.1.0)\cr
+    Maintainer: \tab  \email{brechtdv@gmail.com}\cr
+    Depends:    \tab  R (>= 3.2.0)\cr
     License:    \tab  GPL (>= 2)\cr
     LazyLoad:   \tab  yes\cr
 }

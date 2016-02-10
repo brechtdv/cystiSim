@@ -19,8 +19,7 @@ random_baseline_pig(n, p, p.high)
   \item{p.high}{Proportion of infected pigs with high infection intensity.}
 }
 
-\details{
-tbc
-}
+%\details{}
 
-\author{\email{Brecht.Devleesschauwer@UGent.be}}
+\author{\email{brechtdv@gmail.com}}
+
