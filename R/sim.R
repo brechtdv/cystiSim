@@ -106,7 +106,7 @@ function(sim) {
     scale_colour_manual(values = col) +
     scale_x_continuous("month") +
     scale_y_continuous("prevalence") +
-    facet_grid(grp~., scale = "free") +
+    facet_grid(grp~., scales = "free") +
     theme(legend.position = "none") +
     theme_bw() +
     ggtitle(sim$main) +
