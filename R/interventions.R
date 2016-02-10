@@ -27,7 +27,7 @@ function(x, efficacy, coverage, min.age = 0, max.age = Inf) {
 
 ## OXFENDAZOLE TREATMENT PIGS
 do_oxf <-
-function(x, efficacy, coverage, immunity = 3, min.age = 0, max.age = Inf) {
+function(x, efficacy, coverage, immunity = 3, min.age = 1, max.age = Inf) {
   ## identify pigs that are eligible for treatment
   id <- x$pig$slaughtered == 0 & x$pig$age >= min.age & x$pig$age <= max.age
 

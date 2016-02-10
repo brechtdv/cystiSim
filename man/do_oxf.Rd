@@ -8,7 +8,7 @@ Intervention function that mimics the possible effects of pig oxfendazole treatm
 }
 
 \usage{
-do_oxf(x, efficacy, coverage, immunity = 3, min.age = 0, max.age = Inf)
+do_oxf(x, efficacy, coverage, immunity = 3, min.age = 1, max.age = Inf)
 }
 
 \arguments{
