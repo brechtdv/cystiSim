@@ -1,7 +1,7 @@
 ### CYSTIRUN METHODS
 
 print.cystiRun <-
-function(x, from = 200, to = NA) {
+function(x, from = 200, to = NA, ...) {
   if (is.na(to)) to <- nrow(x$out)
   p <- colMeans(x$out[seq(from, to), ])
   cat("PC: ", round(p[1], 3),
@@ -15,8 +15,8 @@ function(x, from = 200, to = NA) {
 }
 
 plot.cystiRun <-
-function(x, show = c("PC", "PR", "HT", "EN"),
-         start = 0, from = 1, to = NA) {
+function(x, y = NULL, show = c("PC", "PR", "HT", "EN"),
+         start = 0, from = 1, to = NA, ...) {
   ## define census labels and groups
   label <- c("PC", "P(H)", "P(L)", "PCI", "PR",
              "HT", "HT(inf)", "HT(ch)", "HT(ad)", "EN")
@@ -44,10 +44,10 @@ function(x, show = c("PC", "PR", "HT", "EN"),
                    grp = rep(grp, each = nrow(out)))
 
   ## build plot function
-  ggplot(df, aes(x = m, y = p)) +
-    geom_line(aes(col = lab)) +
+  ggplot(df, aes_string(x = "m", y = "p")) +
+    geom_line(col = lab) +
     scale_colour_manual(values = seq(10)[id_col]) +
-    facet_grid(grp ~ ., scales = "free", as.table = F) +
+    facet_grid(grp ~ ., scales = "free", as.table = FALSE) +
     scale_x_continuous("month") +
     scale_y_continuous("proportion") +
     theme_bw()
