@@ -97,11 +97,12 @@ function(sim) {
                x = x_txt,
                y = y_txt)
 
-  ggplot(df, aes(x = m, y = mean)) +
-    geom_ribbon(aes(ymin = lwr, ymax = upr, fill = par), alpha = .25) +
-    geom_line(aes(y = mean, col = par), size = 1) +
-    geom_line(aes(y = lwr, col = par)) +
-    geom_line(aes(y = upr, col = par)) +
+  ggplot(df, aes_string(x = "m", y = "mean")) +
+    geom_ribbon(aes_string(ymin = "lwr", ymax = "upr", fill = "par"),
+                alpha = .25) +
+    geom_line(aes_string(y = "mean", col = "par"), size = 1) +
+    geom_line(aes_string(y = "lwr", col = "par")) +
+    geom_line(aes_string(y = "upr", col = "par")) +
     scale_fill_manual(values = col) +
     scale_colour_manual(values = col) +
     scale_x_continuous("month") +
@@ -111,7 +112,7 @@ function(sim) {
     theme_bw() +
     ggtitle(sim$main) +
     geom_text(data = df_txt,
-              aes(label = lab, x = x, y = y),
+              aes_string(label = "lab", x = "x", y = "y"),
               size = 4, hjust = 1, vjust = 1)
 }
 

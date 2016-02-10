@@ -11,8 +11,8 @@ function(x) {
 
 ## reporter function: prevalence
 prevalence <-
-function(x) {
-  sum(x == 1, na.rm = TRUE) / length(x[!is.na(x)])
+function(z) {
+  sum(z == 1, na.rm = TRUE) / length(z[!is.na(z)])
 }
 
 ## reporter function: census
@@ -248,7 +248,7 @@ for (i in seq(n)) {
                         x$par$ph2m, x$par$pl2m, x$par$age_coef)
 
   ## STEP 06: remove slaughtered pigs of previous cycle
-  x$pig <- subset(x$pig, slaughtered == 0)
+  x$pig <- subset(x$pig, x$pig$slaughtered == 0)
 
   ## STEP 07: maturation of cysts present in previous cycle
   is_infected <- x$pig$cysti_immature == 1
