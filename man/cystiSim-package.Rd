@@ -1,6 +1,5 @@
 \name{cystiSim-package}
-\alias{cystiSim}
-\alias{cystiSim}
+\alias{cystiSim-package}
 
 \docType{package}
 

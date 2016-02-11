@@ -205,9 +205,10 @@ function(man, pig,
 ## UPDATE MODEL ------------------------------------------------------------#
 
 update.cystiRun <-
-function(x, n = 1200, verbose = TRUE) {
+function(object, n = 1200, verbose = TRUE, ...) {
 
 ## MODEL
+x <- object
 out <- matrix(nrow = n, ncol = 10)
 
 if (verbose) pb <- txtProgressBar(max = n, style = 3)

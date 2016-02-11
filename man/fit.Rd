@@ -11,7 +11,7 @@ This function simulates random cystiSim parameters, and return those scenarios t
 fit(n.sim, n.update, target, limit,
     man, pig, ph2m, pl2m, m2p, e2p, age.coef = c(0, 0),
     slaughter = slaughter_nbinom,
-    slaughter.args = list(min = 6,  max = 36, mu = 0.7, size = 80)))
+    slaughter.args = list(min = 6,  max = 36, mu = 0.7, size = 80))
 }
 
 \arguments{
@@ -41,8 +41,3 @@ The abbreviations used:
 }
 
 \author{\email{brechtdv@gmail.com}}
-
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
-

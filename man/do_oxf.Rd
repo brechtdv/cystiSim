@@ -20,8 +20,8 @@ do_oxf(x, efficacy, coverage, immunity = 3, min.age = 1, max.age = Inf)
   \item{max.age}{Maximum age for oxfendazole treatment, in months. Defaults to \code{Inf}, i.e., no upper age limit.}
 }
 
-\details{tbc}
+%\details{}
 
-\author{\email{Brecht.Devleesschauwer@UGent.be}}
+\author{\email{brechtdv@gmail.com}}
 
 \seealso{Other interventions: \code{\link{do_mda}}, \code{\link{do_vac}}}

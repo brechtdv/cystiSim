@@ -26,15 +26,15 @@ report(x, \dots)
 }
 
 \arguments{
-  \item{n}{}
-  \item{mod}{}
-  \item{main}{}
+  \item{n}{Number of iterations (months).}
+  \item{mod}{cystiSim model.}
+  \item{main}{cystiSim model label.}
   \item{x}{Object of class 'cystiSim'.}
   \item{object}{Object of class 'cystiSim'.}
   \item{y}{Currently ignored.}
-  \item{round}{Currently ignored.}
-  \item{name}{Currently ignored.}
-  \item{\dots}{}
+  \item{round}{Number of decimal digits to be printed.}
+  \item{name}{Report name.}
+  \item{\dots}{Other arguments to be passed to generics.}
 }
 
 %\details{}

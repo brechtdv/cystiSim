@@ -1,4 +1,5 @@
 \name{cystiRun}
+\alias{cystiRun}
 \alias{initiate}
 \alias{update.cystiRun}
 \alias{print.cystiRun}

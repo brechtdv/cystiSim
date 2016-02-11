@@ -39,8 +39,8 @@ function(n = 100, mod, main = NULL) {
 ## cystiSims METHODS -------------------------------------------------------#
 
 print.cystiSim <-
-function(sim) {
-  mod <- strsplit(as.character(sim$mod)[2], "%>%")[[1]]
+function(x, ...) {
+  mod <- strsplit(as.character(x$mod)[2], "%>%")[[1]]
   mod <- gsub("\n", "", mod)
   mod <- sub("^ +", "", mod)
   mod <- sub(" +$", "", mod)
@@ -53,9 +53,9 @@ function(sim) {
 }
 
 summary.cystiSim <-
-function(sim, round = 3) {
-  sim_mx <- sapply(sim$out, as.matrix)
-  m <- nrow(sim_mx) / ncol(sim$out[[1]])
+function(object, round = 3, ...) {
+  sim_mx <- sapply(object$out, as.matrix)
+  m <- nrow(sim_mx) / ncol(object$out[[1]])
 
   out <-
   rbind(
@@ -69,25 +69,25 @@ function(sim, round = 3) {
 }
 
 plot.cystiSim <-
-function(sim) {
+function(x, y = NULL, ...) {
   lab <- factor(c("PC", "PR", "HT"), c("PC", "PR", "HT"))
   grp <- factor(c("pig", "pig", "human"), c("pig", "human"))
   col <- c(1, 3, 2)
 
-  sim_mx <- sapply(sim$out, as.matrix)  # ncol=it; nrow=par*months
+  sim_mx <- sapply(x$out, as.matrix)  # ncol=it; nrow=par*months
 
   df <-
   data.frame(mean = rowMeans(sim_mx),
              lwr  = apply(sim_mx, 1, quantile, 0.025),
              upr  = apply(sim_mx, 1, quantile, 0.975),
-             m = rep(seq(nrow(sim_mx) / ncol(sim$out[[1]])),
-                     ncol(sim$out[[1]])),
-             par = rep(lab, each = nrow(sim_mx) / ncol(sim$out[[1]])),
-             grp = rep(grp, each = nrow(sim_mx) / ncol(sim$out[[1]])))
+             m = rep(seq(nrow(sim_mx) / ncol(x$out[[1]])),
+                     ncol(x$out[[1]])),
+             par = rep(lab, each = nrow(sim_mx) / ncol(x$out[[1]])),
+             grp = rep(grp, each = nrow(sim_mx) / ncol(x$out[[1]])))
 
-  stats <- summary(sim)
+  stats <- summary(x)
 
-  x_txt <- nrow(sim_mx) / ncol(sim$out[[1]])
+  x_txt <- nrow(sim_mx) / ncol(x$out[[1]])
   y_txt <- tapply(apply(sim_mx, 1, max), df$grp, max)
 
   df_txt <-
@@ -110,7 +110,7 @@ function(sim) {
     facet_grid(grp~., scales = "free") +
     theme(legend.position = "none") +
     theme_bw() +
-    ggtitle(sim$main) +
+    ggtitle(x$main) +
     geom_text(data = df_txt,
               aes_string(label = "lab", x = "x", y = "y"),
               size = 4, hjust = 1, vjust = 1)
@@ -122,7 +122,7 @@ function(sim, ...) {
 }
 
 report.cystiSim <-
-function(sim, name = "cystiSim") {
+function(sim, name = "cystiSim", ...) {
   ## temporary 'mod' file
   ## write model
   tmp <- tempfile(fileext = ".Rnw")
