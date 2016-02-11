@@ -1,8 +1,8 @@
 Package: cystiSim
 Type: Package
 Title: Agent-based model for Taenia solium transmission and control
-Version: 0.0.2
-Date: 2015-12-29
+Version: 0.0.3
+Date: 2016-02-11
 Authors@R: c(person("Brecht", "Devleesschauwer",
                     role = c("aut", "cre"),
                     email = "brechtdv@gmail.com"),
@@ -10,7 +10,7 @@ Authors@R: c(person("Brecht", "Devleesschauwer",
 Author: Brecht Devleesschauwer [aut, cre], Uffe Christian Braae [aut]
 Maintainer: Brecht Devleesschauwer <brechtdv@gmail.com>
 Description: cystiSim is an agent-based model for Taenia solium transmission and control.
-Depends: R (>= 3.2.0), ggplot2, magrittr
-Imports: knitr
+Depends: R (>= 3.2.0), ggplot2
+Imports: magrittr, knitr
 License: GPL (>= 2)
 LazyData: true
