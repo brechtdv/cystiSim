@@ -5,6 +5,18 @@
 
 cystiSim <-
 function(n = 100, mod, main = NULL) {
+  ## check if global variables are present
+  ph2m <- get("ph2m", envir = .GlobalEnv)
+  pl2m <- get("pl2m", envir = .GlobalEnv)
+  m2p  <- get("m2p",  envir = .GlobalEnv)
+  e2p  <- get("e2p", envir = .GlobalEnv)
+  eff_mda <- get("eff_mda", envir = .GlobalEnv)
+  cov_mda <- get("cov_mda", envir = .GlobalEnv)
+  eff_oxf <- get("eff_oxf", envir = .GlobalEnv)
+  cov_oxf <- get("cov_oxf", envir = .GlobalEnv)
+  eff_vac <- get("eff_vac", envir = .GlobalEnv)
+  cov_vac <- get("cov_vac", envir = .GlobalEnv)
+
   ## predefine list of simulations
   out <- vector("list", n)
 
@@ -14,7 +26,7 @@ function(n = 100, mod, main = NULL) {
     out[[i]] <- eval(substitute(mod))$out[, c(1, 5, 6)]
   }
 
-  ## create 'cystiSims' object
+  ## create 'cystiSim' object
   sim <-
     list(out = out,
          mod = substitute(mod),
@@ -27,16 +39,16 @@ function(n = 100, mod, main = NULL) {
                     eff_oxf = eff_oxf, cov_oxf = cov_oxf,
                     eff_vac = eff_vac, cov_vac = cov_vac))
 
-  ## add S3 class 'cystiSims'
+  ## add S3 class 'cystiSim'
   class(sim) <- "cystiSim"
 
-  ## return 'cystiSims' object
+  ## return 'cystiSim' object
   return(sim)
 }
 
 
 ## -------------------------------------------------------------------------#
-## cystiSims METHODS -------------------------------------------------------#
+## cystiSim METHODS -------------------------------------------------------#
 
 print.cystiSim <-
 function(x, ...) {
@@ -117,18 +129,18 @@ function(x, y = NULL, ...) {
 }
 
 report <-
-function(sim, ...) {
+function(x, ...) {
   UseMethod("report")
 }
 
 report.cystiSim <-
-function(sim, name = "cystiSim", ...) {
+function(x, name = "cystiSim", ...) {
   ## temporary 'mod' file
   ## write model
   tmp <- tempfile(fileext = ".Rnw")
   sink(tmp)
   cat("<<eval=FALSE>>=\n")  
-  print(sim)
+  print(x)
   cat("@\n")
   sink()
 
@@ -148,7 +160,7 @@ function(sim, name = "cystiSim", ...) {
   ## generate PNG
   png(paste0(name, "_", today(), ".png"),
       width = 10, height = 5, units = "in", res = 300)
-  print(plot(sim))
+  print(plot(x))
   graphics.off()
 }
 
