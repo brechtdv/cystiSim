@@ -234,8 +234,8 @@ for (i in seq(n)) {
   x$man$time_since_contamination[tw_dies] <- 1   # envir contamination!
 
   ## STEP 04: exponential decay of environmental contamination
-  ## if no HT & time.since.contam > 0, exp decay
-  ## if no HT & time.since.contam > 0 & no decay, time.since.contam++
+  ## .. if no HT & time.since.contam > 0, exp decay
+  ## .. if no HT & time.since.contam > 0 & no decay, time.since.contam++
   is_decay <- x$man$time_since_contamination > 0
   p_decay  <- exp_decay(x$man$time_since_contamination[is_decay])
   decay    <- rbinom(sum(is_decay), 1, p_decay) == 1

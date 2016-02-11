@@ -12,7 +12,7 @@
     Package:    \tab  cystiSim\cr
     Type:       \tab  Package\cr
     Version:    \tab  0.0.3\cr
-    Date:       \tab  2016-02-10\cr
+    Date:       \tab  2016-02-11\cr
     Authors:    \tab  Brecht Devleesschauwer, Uffe Christian Braae\cr
     Maintainer: \tab  \email{brechtdv@gmail.com}\cr
     Depends:    \tab  R (>= 3.2.0)\cr
@@ -26,18 +26,19 @@ Available functions in the \pkg{cystiSim} package:
     \code{\link{random_baseline_man}}  \tab Generate a random baseline human population.\cr
     \code{\link{random_baseline_pig}}  \tab Generate a random baseline pig population.\cr\cr
     
-    \strong{model}\cr
-    \code{\link{initiate}}        \tab Initiate a \code{cystiSim} model.\cr
-    \code{\link{update}}          \tab Update a \code{cystiSim} model.\cr\cr
+    \strong{model---S3 class '\code{\link{cystiRun}}'}\cr
+    \code{\link{fit}}             \tab Fit parameters of a \code{cystiRun} model.\cr
+    \code{\link{initiate}}        \tab Initiate a \code{cystiRun} model.\cr
+    \code{\link{update}}          \tab Update a \code{cystiRun} model.\cr\cr
 
     \strong{interventions}\cr
     \code{\link{do_mda}}          \tab Do human mass drug administration.\cr
     \code{\link{do_oxf}}          \tab Do pig oxfendazole treatment.\cr
-    \code{\link{do_vac}}          \tab Do pig vaccination.\cr\cr
+    \code{\link{do_vac}}          \tab Do pig vaccination.\cr
+    \code{\link{do_oxf_vac}}      \tab Do pig oxfendazole treatment AND vaccination.\cr\cr
 
-    \strong{S3 methods}\cr
-    \code{\link{print}}  \tab Show current prevalences.\cr
-    \code{\link{plot}}   \tab Plot prevalences across time.\cr
+    \strong{simulate---S3 class '\code{\link{cystiSim}}'}\cr
+    \code{\link{cystiSim}}        \tab Simulate multiple \code{cystiRun} models.\cr\cr
   }
 }
 

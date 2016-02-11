@@ -8,17 +8,17 @@ Intervention function that mimics the possible effects of human MDA.
 }
 
 \usage{
-do_mda(x, efficacy, coverage, min.age = 0, max.age = Inf)
+do_mda(x, coverage, efficacy, min.age = 0, max.age = Inf)
 }
 
 \arguments{
-  \item{x}{\code{cystiSim} object.}
-  \item{efficacy}{Presumed efficacy of tapeworm treatment, expressed as a decimal value.}
+  \item{x}{\code{cystiRun} object.}
   \item{coverage}{Presumed coverage of drug administration within eligible population, expressed as a decimal value.}
+  \item{efficacy}{Presumed efficacy of tapeworm treatment, expressed as a decimal value.}
   \item{min.age}{Minimum age for MDA, in months. Defaults to \code{0}, i.e., no lower age limit.}
   \item{max.age}{Maximum age for MDA, in months. Defaults to \code{Inf}, i.e., no upper age limit.}
 }
 
 \author{\email{brechtdv@gmail.com}}
 
-\seealso{Other interventions: \code{\link{do_oxf}}, \code{\link{do_vac}}}
+\seealso{Other interventions: \code{\link{do_oxf}}, \code{\link{do_vac}}, \code{\link{do_oxf_vac}}}
