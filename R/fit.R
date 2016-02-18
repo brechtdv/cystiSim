@@ -7,7 +7,7 @@ fit <-
 function(n.sim, n.update, target, limit,
          man, pig, ph2m, pl2m, m2p, e2p, age.coef = c(0, 0),
          slaughter = slaughter_nbinom,
-         slaughter.args = list(min = 6,  max = 36, mu = 0.7, size = 80)) {
+         slaughter.args = list(min = 6,  max = 36, size = 0.70, mu = 80)) {
   ## evaluate 'target'
   if (!is.list(target)) stop("'target' must be a list")
   sapply(names(target), match.arg, c("ht", "pc", "pi"))
