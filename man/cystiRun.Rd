@@ -16,7 +16,7 @@ Functions to initiate, update and explore 'cystiRun' objects. A 'cystiRun' objec
 initiate(man, pig,
          ph2m, pl2m, m2p, e2p, age.coef = c(0, 0),
          slaughter = slaughter_nbinom,
-         slaughter.args = list(min = 6, max = 36, mu = 0.70, size = 80))
+         slaughter.args = list(min = 6, max = 36, size = 0.70, mu = 80))
 
 \S3method{update}{cystiRun}(object, n = 1200, verbose = TRUE, \dots)
 
