@@ -2,7 +2,9 @@
 
 [![Travis-CI Build Status](https://travis-ci.org/brechtdv/cystiSim.svg?branch=master)](https://travis-ci.org/brechtdv/cystiSim)
 
-An agent-based model for _Taenia solium_ transmission and control
+_Agent-based model for Taenia solium transmission and control_
+
+`cystiSim` was developed within the framework of [CYSTINET](http://www.cystinet.org/), the European Network on taeniosis/cysticercosis, COST ACTION TD1302.
 
 #### Download and install
 
