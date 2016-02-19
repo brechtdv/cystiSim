@@ -4,8 +4,6 @@
 
 _Agent-based model for Taenia solium transmission and control_
 
-`cystiSim` was developed within the framework of [CYSTINET](http://www.cystinet.org/), the European Network on taeniosis/cysticercosis, COST ACTION TD1302.
-
 #### Download and install
 
 ```r
@@ -16,3 +14,7 @@ library("cystiSim")
 #### Getting started
 
 Start exploring `cystiSim` through the [examples](https://github.com/brechtdv/cystiSim/wiki/examples) on the [Wiki page](https://github.com/brechtdv/cystiSim/wiki).
+
+#### Acknowledgments
+
+[`cystiSim`](https://github.com/brechtdv/cystiSim) was developed by [@UCBraae](https://twitter.com/ucbraae) and [@brechtdv](https://github.com/brechtdv), within the framework of [CYSTINET](http://www.cystinet.org/), the European Network on taeniosis/cysticercosis, COST ACTION TD1302.
