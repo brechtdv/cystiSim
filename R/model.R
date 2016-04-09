@@ -52,8 +52,9 @@ function(x) {
 ## exponential decay of environmental contamination
 exp_decay <-
 function(time) {
-  time[time == 9] <- Inf      # 100% decay at month 9
-  1 - exp(-0.2682422 * time)  # exp decay
+  p_decay <- rep(0.2682422, length(time))
+  p_decay[time >= 9] <- 1     # 100% decay at month 9
+  return(p_decay)
 }
 
 
