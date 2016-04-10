@@ -38,6 +38,7 @@ report(x, \dots)
   \item{y}{Currently ignored.}
   \item{round}{Number of decimal digits to be printed.}
   \item{name}{Report name.}
+  \item{show}{Show time till elimination in terms of months or years?}
   \item{\dots}{Other arguments to be passed to generics.}
 }
 
