@@ -1,6 +1,7 @@
 \name{cystiSim}
 \alias{cystiSim}
 \alias{report}
+\alias{elim}
 \alias{print.cystiSim}
 \alias{summary.cystiSim}
 \alias{plot.cystiSim}
@@ -25,7 +26,7 @@ report(x, \dots)
 
 \S3method{report}{cystiSim}(x, name = "cystiSim", \dots)
 
-\S3method{elim}{cystiSim}(x, \dots)
+\S3method{elim}{cystiSim}(x, show = c("m", "y"), \dots)
 }
 
 \arguments{
