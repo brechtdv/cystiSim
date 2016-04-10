@@ -11,7 +11,7 @@
   \tabular{ll}{
     Package:    \tab  cystiSim\cr
     Version:    \tab  0.0.5\cr
-    Date:       \tab  2016-04-09\cr
+    Date:       \tab  2016-04-10\cr
     Authors:    \tab  Brecht Devleesschauwer, Uffe Christian Braae\cr
     Maintainer: \tab  \email{brechtdv@gmail.com}\cr
     URL:        \tab  https://github.com/brechtdv/cystiSim\cr

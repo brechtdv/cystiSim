@@ -164,6 +164,30 @@ function(x, name = "cystiSim", ...) {
   graphics.off()
 }
 
+elim <-
+function(x, ...) {
+  UseMethod("elim")
+}
+
+elim.cystiSim <-
+function(x, show = c("m", "y"), ...) {
+  show <- match.arg(show)
+  cat(nrow(x$out[[1]]), "iterations\n")
+  pc <- sapply(x$out, function(x) tail(which(x[, 1] != 0), 1)) - 201
+  ht <- sapply(x$out, function(x) tail(which(x[, 3] != 0), 1)) - 201
+
+  div <- ifelse(show == "m", 1, 12)
+
+  Summary <-
+  function(x) {
+    c(mean = mean(x),
+      min = min(x),
+      max = max(x),
+      quantile(x, c(0.025, 0.975)))
+  }
+
+  rbind(pc = Summary(pc), ht = Summary(ht)) / div
+}
 
 ## -------------------------------------------------------------------------#
 ## HELPER FUNCTIONS --------------------------------------------------------#

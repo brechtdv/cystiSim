@@ -1,6 +1,8 @@
 cystiSim 0.0.5
 ==============
 
+* add `elim` method for `cystiSim` objects
+
 * fix bug in `exp_decay`
 
 cystiSim 0.0.4
