@@ -5,7 +5,7 @@
 \setlength\parindent{0pt}
 
 \begin{document}
-{\huge \textbf{cystiSim} // \Sexpr{sim$main}}
+{\huge \textbf{cystiSim} // \Sexpr{gsub("\\%", "\\\\%", sim$main)}}
 
 \section*{Settings}
 \texttt{cystiSim} version \Sexpr{packageVersion("cystiSim")}
