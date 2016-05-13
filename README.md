@@ -13,7 +13,7 @@ library("cystiSim")
 
 #### Getting started
 
-Start exploring `cystiSim` through the [examples](https://github.com/brechtdv/cystiSim/wiki/examples) on the [Wiki page](https://github.com/brechtdv/cystiSim/wiki).
+Start exploring `cystiSim` through the documentation and examples on the [Wiki page](https://github.com/brechtdv/cystiSim/wiki).
 
 #### Acknowledgments
 
