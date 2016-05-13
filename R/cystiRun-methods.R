@@ -45,7 +45,7 @@ function(x, y = NULL, show = c("PC", "PR", "HT", "EN"),
 
   ## build plot function
   ggplot(df, aes_string(x = "m", y = "p")) +
-    geom_line(col = lab) +
+    geom_line(aes(col = lab)) +
     scale_colour_manual(values = seq(10)[id_col]) +
     facet_grid(grp ~ ., scales = "free", as.table = FALSE) +
     scale_x_continuous("month") +
