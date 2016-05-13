@@ -1,5 +1,5 @@
-\name{do_mda_pig}
-\alias{do_mda_pig}
+\name{do_pig_mda}
+\alias{do_pig_mda}
 
 \title{Do pig Mass Drug Administration (MDA)}
 
@@ -8,7 +8,7 @@ Intervention function that mimics the possible effects of pig mass drug administ
 }
 
 \usage{
-do_mda_pig(x, coverage, efficacy, immunity = 3, min.age = 1, max.age = Inf)
+do_pig_mda(x, coverage, efficacy, immunity = 3, min.age = 1, max.age = Inf)
 }
 
 \arguments{
@@ -24,4 +24,4 @@ do_mda_pig(x, coverage, efficacy, immunity = 3, min.age = 1, max.age = Inf)
 
 \author{\email{brechtdv@gmail.com}}
 
-\seealso{Other interventions: \code{\link{do_mda_man}}, \code{\link{do_vac_pig}}, \code{\link{do_mda_vac_pig}}}
+\seealso{Other interventions: \code{\link{do_man_mda}}, \code{\link{do_pig_vac}}, \code{\link{do_pig_mda_vac}}}

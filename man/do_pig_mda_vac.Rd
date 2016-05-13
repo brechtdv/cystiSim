@@ -1,5 +1,5 @@
-\name{do_mda_vac_pig}
-\alias{do_mda_vac_pig}
+\name{do_pig_mda_vac}
+\alias{do_pig_mda_vac}
 
 \title{Do pig mas drug administration AND vaccination}
 
@@ -8,7 +8,7 @@ Intervention function that mimics the possible effects of combined pig mass drug
 }
 
 \usage{
-do_mda_vac_pig(x, coverage, efficacy.mda, efficacy.vac,
+do_pig_mda_vac(x, coverage, efficacy.mda, efficacy.vac,
                immunity.mda = 3, immunity.vac = Inf, interval = 4,
                min.age = 1, max.age = Inf)
 }
@@ -29,4 +29,4 @@ do_mda_vac_pig(x, coverage, efficacy.mda, efficacy.vac,
 
 \author{\email{brechtdv@gmail.com}}
 
-\seealso{Other interventions: \code{\link{do_mda_man}}, \code{\link{do_mda_pig}}, \code{\link{do_vac_pig}}}
+\seealso{Other interventions: \code{\link{do_man_mda}}, \code{\link{do_pig_mda}}, \code{\link{do_pig_vac}}}

@@ -1,7 +1,7 @@
 ## CYSTISIM INTERVENTIONS
 
-## MASS DRUG ADMINISTRATION - HUMANS
-do_mda_man <-
+## HUMANS - MASS DRUG ADMINISTRATION
+do_man_mda <-
 function(x, coverage, efficacy, min.age = 0, max.age = Inf) {
   ## identify HT that are eligible for treatment
   id <- (x$man$taenia == 1 | x$man$taenia_immature == 1) &
@@ -25,8 +25,8 @@ function(x, coverage, efficacy, min.age = 0, max.age = Inf) {
 }
 
 
-## MASS DRUG ADMINISTRATION - PIGS
-do_mda_pig <-
+## PIGS - MASS DRUG ADMINISTRATION
+do_pig_mda <-
 function(x, coverage, efficacy, immunity = 3, min.age = 1, max.age = Inf) {
   ## identify pigs that are eligible for treatment
   id <- x$pig$slaughtered == 0 &
@@ -55,8 +55,8 @@ function(x, coverage, efficacy, immunity = 3, min.age = 1, max.age = Inf) {
 }
 
 
-## VACCINATION - PIGS
-do_vac_pig <-
+## PIGS - VACCINATION
+do_pig_vac <-
 function(x, coverage, efficacy, immunity = Inf, interval = 4,
          min.age = 1, max.age = Inf) {
   ## so far only lifelong immunity implemented !!!
@@ -90,8 +90,8 @@ function(x, coverage, efficacy, immunity = Inf, interval = 4,
 }
 
 
-## MDA + VACCINATION PIGS
-do_mda_vac_pig <-
+## PIGS - MDA + VACCINATION
+do_pig_mda_vac <-
 function(x, coverage, efficacy.mda, efficacy.vac,
          immunity.mda = 3, immunity.vac = Inf, interval = 4,
          min.age = 1, max.age = Inf) {

@@ -34,10 +34,10 @@ Available functions in the \pkg{cystiSim} package:
     \code{\link{update}}          \tab Update a \code{cystiRun} model.\cr\cr
 
     \strong{interventions}\cr
-    \code{\link{do_mda_man}}      \tab Do human mass drug administration.\cr
-    \code{\link{do_mda_pig}}      \tab Do pig mass drug administration.\cr
-    \code{\link{do_vac_pig}}      \tab Do pig vaccination.\cr
-    \code{\link{do_mda_vac_pig}}  \tab Do pig mass drug administration AND vaccination.\cr\cr
+    \code{\link{do_man_mda}}      \tab Do human mass drug administration.\cr
+    \code{\link{do_pig_mda}}      \tab Do pig mass drug administration.\cr
+    \code{\link{do_pig_vac}}      \tab Do pig vaccination.\cr
+    \code{\link{do_pig_mda_vac}}  \tab Do pig mass drug administration AND vaccination.\cr\cr
 
     \strong{simulate---S3 class '\code{\link{cystiSim}}'}\cr
     \code{\link{cystiSim}}        \tab Simulate multiple \code{cystiRun} models.\cr

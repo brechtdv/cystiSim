@@ -1,5 +1,5 @@
-\name{do_vac_pig}
-\alias{do_vac_pig}
+\name{do_pig_vac}
+\alias{do_pig_vac}
 
 \title{Do pig vaccination}
 
@@ -8,7 +8,7 @@ Intervention function that mimics the possible effects of pig vaccination.
 }
 
 \usage{
-do_vac_pig(x, coverage, efficacy, immunity = Inf, interval = 4,
+do_pig_vac(x, coverage, efficacy, immunity = Inf, interval = 4,
            min.age = 1, max.age = Inf)
 }
 
@@ -26,4 +26,4 @@ do_vac_pig(x, coverage, efficacy, immunity = Inf, interval = 4,
 
 \author{\email{brechtdv@gmail.com}}
 
-\seealso{Other interventions: \code{\link{do_mda_man}}, \code{\link{do_mda_pig}}, \code{\link{do_mda_vac_pig}}}
+\seealso{Other interventions: \code{\link{do_man_mda}}, \code{\link{do_pig_mda}}, \code{\link{do_pig_mda_vac}}}
