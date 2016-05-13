@@ -1,14 +1,14 @@
-\name{do_mda}
-\alias{do_mda}
+\name{do_mda_man}
+\alias{do_mda_man}
 
 \title{Do human Mass Drug Administration (MDA)}
 
 \description{
-Intervention function that mimics the possible effects of human MDA.
+Intervention function that mimics the possible effects of human mass drug administration.
 }
 
 \usage{
-do_mda(x, coverage, efficacy, min.age = 0, max.age = Inf)
+do_mda_man(x, coverage, efficacy, min.age = 0, max.age = Inf)
 }
 
 \arguments{
@@ -21,4 +21,4 @@ do_mda(x, coverage, efficacy, min.age = 0, max.age = Inf)
 
 \author{\email{brechtdv@gmail.com}}
 
-\seealso{Other interventions: \code{\link{do_oxf}}, \code{\link{do_vac}}, \code{\link{do_oxf_vac}}}
+\seealso{Other interventions: \code{\link{do_mda_pig}}, \code{\link{do_vac_pig}}, \code{\link{do_mda_vac_pig}}}

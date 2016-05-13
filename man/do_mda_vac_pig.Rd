@@ -1,24 +1,24 @@
-\name{do_oxf_vac}
-\alias{do_oxf_vac}
+\name{do_mda_vac_pig}
+\alias{do_mda_vac_pig}
 
-\title{Do pig oxfendazole treatment AND vaccination}
+\title{Do pig mas drug administration AND vaccination}
 
 \description{
-Intervention function that mimics the possible effects of combined pig oxfendazole treatment and vaccination.
+Intervention function that mimics the possible effects of combined pig mass drug administration and vaccination.
 }
 
 \usage{
-do_oxf_vac(x, coverage, efficacy.oxf, efficacy.vac,
-           immunity.oxf = 3, immunity.vac = Inf, interval = 4,
-           min.age = 1, max.age = Inf)
+do_mda_vac_pig(x, coverage, efficacy.mda, efficacy.vac,
+               immunity.mda = 3, immunity.vac = Inf, interval = 4,
+               min.age = 1, max.age = Inf)
 }
 
 \arguments{
   \item{x}{\code{cystiRun} object.}
   \item{coverage}{Presumed coverage within eligible population, expressed as a decimal value.}
-  \item{efficacy.oxf}{Presumed efficacy of oxfendazole treatment, expressed as a decimal value.}
+  \item{efficacy.mda}{Presumed efficacy of drug treatment, expressed as a decimal value.}
   \item{efficacy.vac}{Presumed efficacy of vaccine, expressed as a decimal value.}
-  \item{immunity.oxf}{Presumed duration of immunity following oxfendazole treatment of an infected pig. Defaults to 3 months.}
+  \item{immunity.mda}{Presumed duration of immunity following drug treatment of an infected pig. Defaults to 3 months.}
   \item{immunity.vac}{Presumed duration of immunity following successful vaccination. Defaults to \code{Inf}.}
   \item{interval}{Maximum interval between two consecutive shots for immunity. Defaults to 4 months.}
   \item{min.age}{Minimum age for intervention, in months. Defaults to 1 month.}
@@ -29,4 +29,4 @@ do_oxf_vac(x, coverage, efficacy.oxf, efficacy.vac,
 
 \author{\email{brechtdv@gmail.com}}
 
-\seealso{Other interventions: \code{\link{do_mda}}, \code{\link{do_oxf}}, \code{\link{do_vac}}}
+\seealso{Other interventions: \code{\link{do_mda_man}}, \code{\link{do_mda_pig}}, \code{\link{do_vac_pig}}}

@@ -9,7 +9,7 @@
 \title{'cystiRun' object}
 
 \description{
-Functions to initiate, update and explore 'cystiRun' objects. A 'cystiRun' object corresponds to a single run of a cystiSim model.
+Functions to initiate, update and explore 'cystiRun' objects. A 'cystiRun' object corresponds to a single run of a \pkg{cystiSim} model.
 }
 
 \usage{
@@ -64,5 +64,5 @@ prevalence(z)
 \author{\email{brechtdv@gmail.com}}
 
 \seealso{
-Intervention functions: \code{\link{do_mda}}, \code{\link{do_oxf}}, \code{\link{do_vac}}
+Intervention functions: \code{\link{do_mda_man}}, \code{\link{do_mda_pig}}, \code{\link{do_vac_pig}}, \code{\link{do_mda_vac_pig}}
 }

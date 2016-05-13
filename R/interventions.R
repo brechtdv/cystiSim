@@ -1,7 +1,7 @@
 ## CYSTISIM INTERVENTIONS
 
-## MASS DRUG ADMINISTRATION
-do_mda <-
+## MASS DRUG ADMINISTRATION - HUMANS
+do_mda_man <-
 function(x, coverage, efficacy, min.age = 0, max.age = Inf) {
   ## identify HT that are eligible for treatment
   id <- (x$man$taenia == 1 | x$man$taenia_immature == 1) &
@@ -25,8 +25,8 @@ function(x, coverage, efficacy, min.age = 0, max.age = Inf) {
 }
 
 
-## OXFENDAZOLE TREATMENT PIGS
-do_oxf <-
+## MASS DRUG ADMINISTRATION - PIGS
+do_mda_pig <-
 function(x, coverage, efficacy, immunity = 3, min.age = 1, max.age = Inf) {
   ## identify pigs that are eligible for treatment
   id <- x$pig$slaughtered == 0 &
@@ -55,8 +55,8 @@ function(x, coverage, efficacy, immunity = 3, min.age = 1, max.age = Inf) {
 }
 
 
-## VACCINATION PIGS
-do_vac <-
+## VACCINATION - PIGS
+do_vac_pig <-
 function(x, coverage, efficacy, immunity = Inf, interval = 4,
          min.age = 1, max.age = Inf) {
   ## so far only lifelong immunity implemented !!!
@@ -90,10 +90,10 @@ function(x, coverage, efficacy, immunity = Inf, interval = 4,
 }
 
 
-## OXFENDAZOLE + VACCINATION PIGS
-do_oxf_vac <-
-function(x, coverage, efficacy.oxf, efficacy.vac,
-         immunity.oxf = 3, immunity.vac = Inf, interval = 4,
+## MDA + VACCINATION PIGS
+do_mda_vac_pig <-
+function(x, coverage, efficacy.mda, efficacy.vac,
+         immunity.mda = 3, immunity.vac = Inf, interval = 4,
          min.age = 1, max.age = Inf) {
   ## so far only lifelong immunity implemented !!!
   if (is.finite(immunity.vac)) {
@@ -105,40 +105,40 @@ function(x, coverage, efficacy.oxf, efficacy.vac,
         x$pig$age >= min.age & x$pig$age <= max.age
 
   ## randomize coverage over eligible pigs
-  ## .. covered pigs receive both OXF and VAC
-  ## .. hence perfect correlation between OXF and VAC coverage
-  is_oxf <- rbinom(sum(id), 1, coverage) == 1
-  is_vac <- is_oxf
+  ## .. covered pigs receive both MDA and VAC
+  ## .. hence perfect correlation between MDA and VAC coverage
+  is_mda <- rbinom(sum(id), 1, coverage) == 1
+  is_vac <- is_mda
 
-  ## randomize effective OXF treatment over covered pigs
-  is_oxf_eff <-
-    rbinom(sum(is_oxf), 1, efficacy.oxf) == 1
+  ## randomize effective MDA treatment over covered pigs
+  is_mda_eff <-
+    rbinom(sum(is_mda), 1, efficacy.mda) == 1
 
   ## randomize effective VAC treatment over covered pigs
   is_vac_eff <-
     rbinom(sum(is_vac), 1, efficacy.vac) == 1
 
-  ## OXF
+  ## MDA
 
   ## generate immunity for treated positive pigs (mature & immature)
   ## .. if immunity is Inf (cf vaccination), no need to reset
   is_immune <-
-    is.finite(x$pig$immunity[id][is_oxf][is_oxf_eff]) &
-    (x$pig$cysti[id][is_oxf][is_oxf_eff] == 1 |
-     x$pig$cysti_immature[id][is_oxf][is_oxf_eff] == 1)
-  x$pig$immunity[id][is_oxf][is_oxf_eff][is_immune] <- immunity.oxf
+    is.finite(x$pig$immunity[id][is_mda][is_mda_eff]) &
+    (x$pig$cysti[id][is_mda][is_mda_eff] == 1 |
+     x$pig$cysti_immature[id][is_mda][is_mda_eff] == 1)
+  x$pig$immunity[id][is_mda][is_mda_eff][is_immune] <- immunity.mda
 
   ## both mature and immature cysts die
   ## .. 'intensity' and 'time_since_infection' get set to zero
-  x$pig$cysti[id][is_oxf][is_oxf_eff] <- 0
-  x$pig$cysti_immature[id][is_oxf][is_oxf_eff] <- 0
-  x$pig$intensity[id][is_oxf][is_oxf_eff] <- 0
-  x$pig$time_since_infection[id][is_oxf][is_oxf_eff] <- 0
+  x$pig$cysti[id][is_mda][is_mda_eff] <- 0
+  x$pig$cysti_immature[id][is_mda][is_mda_eff] <- 0
+  x$pig$intensity[id][is_mda][is_mda_eff] <- 0
+  x$pig$time_since_infection[id][is_mda][is_mda_eff] <- 0
 
   ## VAC
 
   ## generate immunity for pigs that were vaccinated < XXX months before
-  ## .. note that VAC immunity has precendence over OXF immunity
+  ## .. note that VAC immunity has precendence over MDA immunity
   is_immune <-
     !is.na(x$pig$time_since_vaccination[id][is_vac][is_vac_eff]) &
     x$pig$time_since_vaccination[id][is_vac][is_vac_eff] > 0

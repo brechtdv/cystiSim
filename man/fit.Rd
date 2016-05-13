@@ -4,7 +4,7 @@
 \title{Fit cystiSim parameters}
 
 \description{
-This function simulates random cystiSim parameters, and return those scenarios that result in a baseline prevalence close to the specified target.
+This function simulates random \pkg{cystiSim} parameters, and return those scenarios that result in a baseline prevalence close to the specified target.
 }
 
 \usage{

@@ -10,13 +10,13 @@
 \details{
   \tabular{ll}{
     Package:    \tab  cystiSim\cr
-    Version:    \tab  0.0.5\cr
-    Date:       \tab  2016-04-10\cr
+    Version:    \tab  0.0.6\cr
+    Date:       \tab  2016-05-14\cr
     Authors:    \tab  Brecht Devleesschauwer, Uffe Christian Braae\cr
     Maintainer: \tab  \email{brechtdv@gmail.com}\cr
     URL:        \tab  https://github.com/brechtdv/cystiSim\cr
     BugReports: \tab  https://github.com/brechtdv/cystiSim/issues\cr
-    Depends:    \tab  R (>= 3.2.0), ggplot2\cr
+    Depends:    \tab  R (>= 3.3.0), ggplot2\cr
     Imports:    \tab  magrittr, knitr\cr
     License:    \tab  GPL (>= 2)\cr
     LazyLoad:   \tab  yes\cr
@@ -34,13 +34,15 @@ Available functions in the \pkg{cystiSim} package:
     \code{\link{update}}          \tab Update a \code{cystiRun} model.\cr\cr
 
     \strong{interventions}\cr
-    \code{\link{do_mda}}          \tab Do human mass drug administration.\cr
-    \code{\link{do_oxf}}          \tab Do pig oxfendazole treatment.\cr
-    \code{\link{do_vac}}          \tab Do pig vaccination.\cr
-    \code{\link{do_oxf_vac}}      \tab Do pig oxfendazole treatment AND vaccination.\cr\cr
+    \code{\link{do_mda_man}}      \tab Do human mass drug administration.\cr
+    \code{\link{do_mda_pig}}      \tab Do pig mass drug administration.\cr
+    \code{\link{do_vac_pig}}      \tab Do pig vaccination.\cr
+    \code{\link{do_mda_vac_pig}}  \tab Do pig mass drug administration AND vaccination.\cr\cr
 
     \strong{simulate---S3 class '\code{\link{cystiSim}}'}\cr
-    \code{\link{cystiSim}}        \tab Simulate multiple \code{cystiRun} models.\cr\cr
+    \code{\link{cystiSim}}        \tab Simulate multiple \code{cystiRun} models.\cr
+    \code{\link{report}}          \tab Generate a PDF report for a \code{cystiSim} object.\cr
+    \code{\link{elim}}            \tab Derive when elimination occurred in a \code{cystiSim} object.\cr\cr
   }
 }
 

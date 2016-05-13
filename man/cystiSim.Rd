@@ -11,7 +11,7 @@
 \title{'cystiSim' object}
 
 \description{
-Functions to initiate and explore 'cystiSim' objects. A 'cystiSim' object corresponds to multiple runs of a cystiSim model.}
+Functions to initiate and explore 'cystiSim' objects. A 'cystiSim' object corresponds to multiple runs of a \pkg{cystiSim} model.}
 
 \usage{
 cystiSim(n = 100, mod, main = NULL)
