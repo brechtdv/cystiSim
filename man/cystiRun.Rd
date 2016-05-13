@@ -64,5 +64,5 @@ prevalence(z)
 \author{\email{brechtdv@gmail.com}}
 
 \seealso{
-Intervention functions: \code{\link{do_mda_man}}, \code{\link{do_mda_pig}}, \code{\link{do_vac_pig}}, \code{\link{do_mda_vac_pig}}
+Intervention functions: \code{\link{do_man_mda}}, \code{\link{do_pig_mda}}, \code{\link{do_pig_vac}}, \code{\link{do_pig_mda_vac}}
 }
