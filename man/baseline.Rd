@@ -19,7 +19,9 @@ random_baseline_pig(n, p, p.high)
   \item{p.high}{Proportion of infected pigs with high infection intensity.}
 }
 
-%\details{}
+\note{
+For more details and examples, please visit the \pkg{cystiSim} Wiki pages on \url{https://github.com/brechtdv/cystiSim/wiki}.
+}
 
 \author{\email{brechtdv@gmail.com}}
 

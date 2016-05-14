@@ -55,10 +55,12 @@ prevalence(z)
   \item{\dots}{Arguments to be passed on to generic function.}
 }
 
-%\details{}
-
 \value{
 \code{initiate} and \code{update} return an object of S3 class 'cystiRun'.
+}
+
+\note{
+For more details and examples, please visit the \pkg{cystiSim} Wiki pages on \url{https://github.com/brechtdv/cystiSim/wiki}.
 }
 
 \author{\email{brechtdv@gmail.com}}

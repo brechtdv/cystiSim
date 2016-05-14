@@ -40,4 +40,8 @@ The abbreviations used:
 }
 }
 
+\note{
+For more details and examples, please visit the \pkg{cystiSim} Wiki pages on \url{https://github.com/brechtdv/cystiSim/wiki}.
+}
+
 \author{\email{brechtdv@gmail.com}}

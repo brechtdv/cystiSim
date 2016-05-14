@@ -1,7 +1,7 @@
 \name{do_pig_mda_vac}
 \alias{do_pig_mda_vac}
 
-\title{Do pig mas drug administration AND vaccination}
+\title{Do pig mass drug administration (MDA) and vaccination}
 
 \description{
 Intervention function that mimics the possible effects of combined pig mass drug administration and vaccination.
@@ -25,7 +25,9 @@ do_pig_mda_vac(x, coverage, efficacy.mda, efficacy.vac,
   \item{max.age}{Maximum age for intervention, in months. Defaults to \code{Inf}, i.e., no upper age limit.}
 }
 
-%\details{}
+\note{
+For more details and examples, please visit the \pkg{cystiSim} Wiki pages on \url{https://github.com/brechtdv/cystiSim/wiki}.
+}
 
 \author{\email{brechtdv@gmail.com}}
 

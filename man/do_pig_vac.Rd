@@ -22,7 +22,9 @@ do_pig_vac(x, coverage, efficacy, immunity = Inf, interval = 4,
   \item{max.age}{Maximum age for vaccination, in months. Defaults to \code{Inf}, i.e., no upper age limit.}
 }
 
-%\details{}
+\note{
+For more details and examples, please visit the \pkg{cystiSim} Wiki pages on \url{https://github.com/brechtdv/cystiSim/wiki}.
+}
 
 \author{\email{brechtdv@gmail.com}}
 

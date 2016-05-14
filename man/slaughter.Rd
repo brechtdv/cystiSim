@@ -22,6 +22,8 @@ slaughter_nbinom(age, min, max, size, mu)
   \item{mu}{Mean of Negative Binomial distribution of age-specific slaughter probability.}
 }
 
-%\details{}
+\note{
+For more details and examples, please visit the \pkg{cystiSim} Wiki pages on \url{https://github.com/brechtdv/cystiSim/wiki}.
+}
 
 \author{\email{brechtdv@gmail.com}}

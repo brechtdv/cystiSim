@@ -46,4 +46,6 @@ Available functions in the \pkg{cystiSim} package:
   }
 }
 
+For more details and examples, please visit the \pkg{cystiSim} Wiki pages on \url{https://github.com/brechtdv/cystiSim/wiki}.
+
 \keyword{package}
