@@ -81,7 +81,7 @@ function(object, round = 3, ...) {
 }
 
 plot.cystiSim <-
-function(x, y = NULL, ...) {
+function(x, y = NULL, annotate = TRUE, ...) {
   lab <- factor(c("PC", "PR", "HT"), c("PC", "PR", "HT"))
   grp <- factor(c("pig", "pig", "human"), c("pig", "human"))
   col <- c(1, 3, 2)
@@ -109,6 +109,7 @@ function(x, y = NULL, ...) {
                x = x_txt,
                y = y_txt)
 
+  g <-
   ggplot(df, aes_string(x = "m", y = "mean")) +
     geom_ribbon(aes_string(ymin = "lwr", ymax = "upr", fill = "par"),
                 alpha = .25) +
@@ -122,10 +123,17 @@ function(x, y = NULL, ...) {
     facet_grid(grp~., scales = "free") +
     theme(legend.position = "none") +
     theme_bw() +
-    ggtitle(x$main) +
-    geom_text(data = df_txt,
-              aes_string(label = "lab", x = "x", y = "y"),
-              size = 4, hjust = 1, vjust = 1)
+    ggtitle(x$main)
+
+  if (annotate) {
+    g <-
+      g +
+      geom_text(data = df_txt,
+                aes_string(label = "lab", x = "x", y = "y"),
+                size = 4, hjust = 1, vjust = 1)
+  }
+
+  return(g)
 }
 
 report <-

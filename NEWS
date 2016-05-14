@@ -5,6 +5,8 @@ cystiSim 0.0.6
 
 * update help files
 
+* add argument `annotate` to `plot.cystiSim`
+
 cystiSim 0.0.5
 ==============
 
