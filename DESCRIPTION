@@ -12,6 +12,6 @@ Description: The cystiSim package provides an agent-based model for Taenia soliu
 URL: https://github.com/brechtdv/cystiSim
 BugReports: https://github.com/brechtdv/cystiSim/issues
 Depends: R (>= 3.3.0), ggplot2
-Imports: magrittr, knitr
+Imports: magrittr, knitr, graphics, grDevices, stats, utils
 License: GPL (>= 2)
 LazyData: true
