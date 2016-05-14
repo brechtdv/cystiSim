@@ -71,6 +71,10 @@ prevalence(pig_mbeya$cysti)
 prevalence(man_mbeya$taenia)
 
 ## define transmission probabilities
+ph2m <- 0.000174918
+pl2m <- 0.000149501
+m2p  <- 6.85E-05
+e2p  <- 0.00022611
 
 ## set seed for reproducibility
 set.seed(264)
@@ -78,8 +82,10 @@ set.seed(264)
 ## need to define coverage and efficacy of all interventions
 cov_man_mda <- 0.80
 cov_pig_mda <- 0.90
+cov_pig_vac <- NULL
 eff_man_mda <- 0.70
 eff_pig_mda <- 0.90
+eff_pig_vac <- NULL
 
 ## run the simulations
 sim <-

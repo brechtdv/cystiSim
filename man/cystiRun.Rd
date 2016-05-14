@@ -80,6 +80,10 @@ prevalence(pig_mbeya$cysti)
 prevalence(man_mbeya$taenia)
 
 ## define transmission probabilities
+ph2m <- 0.000174918
+pl2m <- 0.000149501
+m2p  <- 6.85E-05
+e2p  <- 0.00022611
 
 ## first initiate the 'cystiRun' object
 mod <- initiate(man_mbeya, pig_mbeya, ph2m, pl2m, m2p, e2p)
