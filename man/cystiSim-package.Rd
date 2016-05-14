@@ -44,8 +44,8 @@ Available functions in the \pkg{cystiSim} package:
     \code{\link{report}}          \tab Generate a PDF report for a \code{cystiSim} object.\cr
     \code{\link{elim}}            \tab Derive when elimination occurred in a \code{cystiSim} object.\cr\cr
   }
-}
 
 For more details and examples, please visit the \pkg{cystiSim} Wiki pages on \url{https://github.com/brechtdv/cystiSim/wiki}.
+}
 
 \keyword{package}
