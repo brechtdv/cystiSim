@@ -68,3 +68,35 @@ For more details and examples, please visit the \pkg{cystiSim} Wiki pages on \ur
 \seealso{
 Intervention functions: \code{\link{do_man_mda}}, \code{\link{do_pig_mda}}, \code{\link{do_pig_vac}}, \code{\link{do_pig_mda_vac}}
 }
+
+\examples{
+\dontrun{
+
+## load the package
+library(cystiSim)
+
+## we will use the built-in datasets
+prevalence(pig_mbeya$cysti)
+prevalence(man_mbeya$taenia)
+
+## define transmission probabilities
+
+## first initiate the 'cystiRun' object
+mod <- initiate(man_mbeya, pig_mbeya, ph2m, pl2m, m2p, e2p)
+
+## update the model 240 cycles (=20 years)
+## this is a burn-in period, needed to obtain steady state
+mod <- update(mod, 240)
+
+## apply human mass drug administration
+mod <- do_man_mda(mod, efficacy = 0.70, coverage = 0.80)
+
+## apply pig mass drug administration
+mod <- do_pig_mda(mod, efficacy = 0.90, coverage = 0.90)
+
+## update the model 120 more cycles (=10 years)
+mod <- update(mod, 120)
+
+## plot the cycles
+plot(mod, from = 200, start = 40)
+}}

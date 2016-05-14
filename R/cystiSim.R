@@ -10,12 +10,12 @@ function(n = 100, mod, main = NULL) {
   pl2m <- get("pl2m", envir = .GlobalEnv)
   m2p  <- get("m2p",  envir = .GlobalEnv)
   e2p  <- get("e2p", envir = .GlobalEnv)
-  eff_mda <- get("eff_mda", envir = .GlobalEnv)
-  cov_mda <- get("cov_mda", envir = .GlobalEnv)
-  eff_oxf <- get("eff_oxf", envir = .GlobalEnv)
-  cov_oxf <- get("cov_oxf", envir = .GlobalEnv)
-  eff_vac <- get("eff_vac", envir = .GlobalEnv)
-  cov_vac <- get("cov_vac", envir = .GlobalEnv)
+  cov_man_mda <- get("cov_man_mda", envir = .GlobalEnv)
+  cov_pig_mda <- get("cov_pig_mda", envir = .GlobalEnv)
+  cov_pig_vac <- get("cov_pig_vac", envir = .GlobalEnv)
+  eff_man_mda <- get("eff_man_mda", envir = .GlobalEnv)
+  eff_pig_mda <- get("eff_pig_mda", envir = .GlobalEnv)
+  eff_pig_vac <- get("eff_pig_vac", envir = .GlobalEnv)
 
   ## predefine list of simulations
   out <- vector("list", n)
@@ -35,9 +35,12 @@ function(n = 100, mod, main = NULL) {
                     pl2m = pl2m,
                     m2p = m2p,
                     e2p = e2p,
-                    eff_mda = eff_mda, cov_mda = cov_mda,
-                    eff_oxf = eff_oxf, cov_oxf = cov_oxf,
-                    eff_vac = eff_vac, cov_vac = cov_vac))
+                    cov_man_mda = cov_man_mda,
+                    cov_pig_mda = cov_pig_mda,
+                    cov_pig_vac = cov_pig_vac,
+                    eff_man_mda = eff_man_mda,
+                    eff_pig_mda = eff_pig_mda,
+                    eff_pig_vac = eff_pig_vac))
 
   ## add S3 class 'cystiSim'
   class(sim) <- "cystiSim"

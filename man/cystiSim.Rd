@@ -59,3 +59,48 @@ For more details and examples, please visit the \pkg{cystiSim} Wiki pages on \ur
 \seealso{
 \code{\link{cystiRun}}
 }
+
+\examples{
+\dontrun{
+
+## load the package
+library(cystiSim)
+
+## we will use the built-in datasets
+prevalence(pig_mbeya$cysti)
+prevalence(man_mbeya$taenia)
+
+## define transmission probabilities
+
+## set seed for reproducibility
+set.seed(264)
+
+## need to define coverage and efficacy of all interventions
+cov_man_mda <- 0.80
+cov_pig_mda <- 0.90
+eff_man_mda <- 0.70
+eff_pig_mda <- 0.90
+
+## run the simulations
+sim <-
+cystiSim(
+  n = 10,
+  main = "example",
+  mod = {
+initiate(man_mbeya, pig_mbeya, ph2m, pl2m, m2p, e2p) \%>\%
+  update(240) \%>\%
+  do_man_mda(coverage = cov_man_mda, efficacy = eff_man_mda) \%>\%
+  do_pig_mda(coverage = cov_pig_mda, efficacy = eff_pig_mda) \%>\%
+  update(120)
+  }
+)
+
+## summarize results
+summary(sim)
+
+## plot simulations (mean and uncertainty interval)
+plot(sim)
+
+## create PDF report and plot
+report(sim)
+}}

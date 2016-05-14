@@ -5,13 +5,13 @@
 
 \title{Agent-based model for \emph{Taenia solium} transmission and control.}
 
-\description{The cystiSim model allows simulating \emph{Taenia solium} taeniosis/cysticercosis transmission in a virtual population of humans and pigs. It also allows evaluating the possible effects of human MDA, pig oxfendazole treatment, and pig vaccination. \pkg{cystiSim} was developed within the framework of CYSTINET, the European Network on taeniosis/cysticercosis, COST ACTION TD1302 (\url{http://www.cystinet.org/}).}
+\description{The cystiSim model allows simulating \emph{Taenia solium} taeniosis/cysticercosis transmission in a virtual population of humans and pigs. It also allows evaluating the possible effects of human mass drug administration, pig mass drug administration, and pig vaccination. \pkg{cystiSim} was developed within the framework of CYSTINET, the European Network on taeniosis/cysticercosis, COST ACTION TD1302 (\url{http://www.cystinet.org/}).}
 
 \details{
   \tabular{ll}{
     Package:    \tab  cystiSim\cr
-    Version:    \tab  0.0.6\cr
-    Date:       \tab  2016-05-14\cr
+    Version:    \tab  0.1.0\cr
+    Date:       \tab  2016-05-15\cr
     Authors:    \tab  Brecht Devleesschauwer, Uffe Christian Braae\cr
     Maintainer: \tab  \email{brechtdv@gmail.com}\cr
     URL:        \tab  https://github.com/brechtdv/cystiSim\cr

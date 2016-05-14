@@ -25,12 +25,18 @@ cat("e2p:  ", formatC(sim$par$e2p, format = "f", digits = 6))
 \begin{minipage}[t]{0.49\textwidth}
 <<echo=1>>=
 ## efficacy, coverage
-cat("eff_mda: ", formatC(sim$par$eff_mda, format = "f", digits = 2), "\n")
-cat("cov_mda: ", formatC(sim$par$cov_mda, format = "f", digits = 2), "\n")
-cat("eff_oxf: ", formatC(sim$par$eff_oxf, format = "f", digits = 2), "\n")
-cat("cov_oxf: ", formatC(sim$par$cov_oxf, format = "f", digits = 2), "\n")
-cat("eff_vac: ", formatC(sim$par$eff_vac, format = "f", digits = 2), "\n")
-cat("cov_vac: ", formatC(sim$par$cov_vac, format = "f", digits = 2))
+cat("eff_man_mda: ",
+    formatC(sim$par$eff_man_mda, format = "f", digits = 2), "\n")
+cat("cov_man_mda: ",
+    formatC(sim$par$cov_man_mda, format = "f", digits = 2), "\n")
+cat("eff_pig_mda: ",
+    formatC(sim$par$eff_pig_mda, format = "f", digits = 2), "\n")
+cat("cov_pig_mda: ",
+    formatC(sim$par$cov_pig_mda, format = "f", digits = 2), "\n")
+cat("eff_pig_vac: ",
+    formatC(sim$par$eff_pig_vac, format = "f", digits = 2), "\n")
+cat("cov_pig_vac: ",
+    formatC(sim$par$cov_pig_vac, format = "f", digits = 2))
 @
 \end{minipage}
 
