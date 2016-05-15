@@ -70,12 +70,7 @@ Intervention functions: \code{\link{do_man_mda}}, \code{\link{do_pig_mda}}, \cod
 }
 
 \examples{
-\dontrun{
-
-## load the package
-library(cystiSim)
-
-## we will use the built-in datasets
+## we will use the built-in Mbeya dataset
 prevalence(pig_mbeya$cysti)
 prevalence(man_mbeya$taenia)
 
@@ -103,4 +98,4 @@ mod <- update(mod, 120)
 
 ## plot the cycles
 plot(mod, from = 200, start = 40)
-}}
+}
