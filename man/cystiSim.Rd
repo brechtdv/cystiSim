@@ -61,6 +61,8 @@ For more details and examples, please visit the \pkg{cystiSim} Wiki pages on \ur
 }
 
 \examples{
+\dontrun{
+
 ## we will use the built-in Mbeya dataset
 prevalence(pig_mbeya$cysti)
 prevalence(man_mbeya$taenia)
@@ -101,8 +103,6 @@ summary(sim)
 
 ## plot simulations (mean and uncertainty interval)
 plot(sim)
-
-\dontrun{
 
 ## create PDF report and plot
 report(sim)
