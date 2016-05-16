@@ -1,6 +1,8 @@
 ## cystiSim
 
 [![Travis-CI Build Status](https://travis-ci.org/brechtdv/cystiSim.svg?branch=master)](https://travis-ci.org/brechtdv/cystiSim)
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/cystiSim)](http://cran.r-project.org/package=cystiSim)
+[![Cranlogs Downloads](http://cranlogs.r-pkg.org/badges/grand-total/cystiSim)](http://cran.r-project.org/package=cystiSim)
 
 _Agent-based model for Taenia solium transmission and control_
 
