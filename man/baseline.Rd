@@ -10,13 +10,15 @@ Generate random baseline human and pig populations.
 
 \usage{
 random_baseline_man(n, p)
-random_baseline_pig(n, p, p.high)
+random_baseline_pig(n, p, p.high, size, mu)
 }
 
 \arguments{
   \item{n}{Number of individuals to simulate.}
   \item{p}{Proportion of individuals infected with a mature parasite.}
   \item{p.high}{Proportion of infected pigs with high infection intensity.}
+  \item{size}{Size of Negative Binomial distribution of age-specific slaughter probability.}
+  \item{mu}{Mean of Negative Binomial distribution of age-specific slaughter probability.}
 }
 
 \note{

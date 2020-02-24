@@ -95,9 +95,9 @@ function(n, steps, size, mu) {
 
 ## random baseline pigs
 random_baseline_pig <-
-function(n, p, p.high) {
+function(n, p, p.high, size = 0.70, mu = 80) {
   ## model age structure of pig population
-  pigs_age <- pig_age_model(n / 6, 500, 0.70, 80)$age
+  pigs_age <- pig_age_model(n / 6, 500, size, mu)$age
 
   ## identify pigs that are 3 months or older
   ## only these pigs are old enough to appear Ag positive
