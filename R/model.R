@@ -285,16 +285,19 @@ for (i in seq(n)) {
     pig_new$time_since_vaccination[is_vaccinated] - 1
 
   ## STEP 14: birth of new pigs
-  pig_new <-
-    rbind(pig_new,
-          data.frame(age = rep(0, sum(is_slaughtered)),
-                     cysti = 0,
-                     cysti_immature = 0,
-                     time_since_infection = 0,
-                     intensity = 0,
-                     immunity = 0,
-                     time_since_vaccination = NA,
-                     slaughtered = 0))
+  ## .. only if pigs were slaughered
+  if (sum(is_slaughtered) > 0) {
+    pig_new <-
+      rbind(pig_new,
+            data.frame(age = rep(0, sum(is_slaughtered)),
+                       cysti = 0,
+                       cysti_immature = 0,
+                       time_since_infection = 0,
+                       intensity = 0,
+                       immunity = 0,
+                       time_since_vaccination = NA,
+                       slaughtered = 0))
+  }
 
   ## replace data frames with new ones
   x$pig <- pig_new

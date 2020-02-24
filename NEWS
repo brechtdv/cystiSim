@@ -1,3 +1,8 @@
+cystiSim 0.1.1
+==============
+
+* fix bug in `update` method (no slaughter == no births)
+
 cystiSim 0.1.0
 ==============
 

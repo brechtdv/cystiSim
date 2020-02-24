@@ -10,13 +10,13 @@
 \details{
   \tabular{ll}{
     Package:    \tab  cystiSim\cr
-    Version:    \tab  0.1.0\cr
-    Date:       \tab  2016-05-15\cr
+    Version:    \tab  0.1.1\cr
+    Date:       \tab  2020-02-24\cr
     Authors:    \tab  Brecht Devleesschauwer, Uffe Christian Braae\cr
     Maintainer: \tab  \email{brechtdv@gmail.com}\cr
     URL:        \tab  https://github.com/brechtdv/cystiSim\cr
     BugReports: \tab  https://github.com/brechtdv/cystiSim/issues\cr
-    Depends:    \tab  R (>= 3.3.0), ggplot2\cr
+    Depends:    \tab  R (>= 3.6.0), ggplot2\cr
     Imports:    \tab  magrittr, knitr\cr
     License:    \tab  GPL (>= 2)\cr
     LazyLoad:   \tab  yes\cr
