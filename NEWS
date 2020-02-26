@@ -1,3 +1,8 @@
+cystiSim 0.1.2
+==============
+
+* set `stringsAsFactors=FALSE` in data.frames
+
 cystiSim 0.1.1
 ==============
 

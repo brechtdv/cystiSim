@@ -6,13 +6,15 @@
 ## simple random baseline for humans
 random_baseline_man <-
 function(n, p) {
-  data.frame(age = round(runif(n, 0, 80) * 12),
-             sex = sample(c("male", "female"), n, replace = TRUE),
-             taenia = rbinom(n, 1, p),
-             taenia_immature = 0,
-             time_since_infection = 0,
-             environment = 0,
-             time_since_contamination = 0)
+  data.frame(
+    stringsAsFactors = FALSE,
+    age = round(runif(n, 0, 80) * 12),
+    sex = sample(c("male", "female"), n, replace = TRUE),
+    taenia = rbinom(n, 1, p),
+    taenia_immature = 0,
+    time_since_infection = 0,
+    environment = 0,
+    time_since_contamination = 0)
 }
 
 ## slaughter function - default
@@ -114,14 +116,16 @@ function(n, p, p.high, size = 0.70, mu = 80) {
 
   ## create 'pigs' dataframe
   pigs <-
-    data.frame(age = pigs_age,
-               cysti = cysti,
-               cysti_immature = 0,
-               time_since_infection = 0,
-               intensity = intensity,
-               immunity = 0,
-               time_since_vaccination = NA,
-               slaughtered = 0)
+    data.frame(
+	  stringsAsFactors = FALSE,
+	  age = pigs_age,
+      cysti = cysti,
+      cysti_immature = 0,
+      time_since_infection = 0,
+      intensity = intensity,
+      immunity = 0,
+      time_since_vaccination = NA,
+      slaughtered = 0)
 
   ## return 'pigs' dataframe
   return(pigs)

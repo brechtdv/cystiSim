@@ -10,8 +10,8 @@
 \details{
   \tabular{ll}{
     Package:    \tab  cystiSim\cr
-    Version:    \tab  0.1.1\cr
-    Date:       \tab  2020-02-24\cr
+    Version:    \tab  0.1.2\cr
+    Date:       \tab  2020-02-26\cr
     Authors:    \tab  Brecht Devleesschauwer, Uffe Christian Braae\cr
     Maintainer: \tab  \email{brechtdv@gmail.com}\cr
     URL:        \tab  https://github.com/brechtdv/cystiSim\cr

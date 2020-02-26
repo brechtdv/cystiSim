@@ -1,7 +1,7 @@
 Package: cystiSim
 Title: Agent-Based Model for Taenia_solium Transmission and Control
-Version: 0.1.1
-Date: 2020-02-24
+Version: 0.1.2
+Date: 2020-02-26
 Authors@R: c(person("Brecht", "Devleesschauwer",
                     role = c("aut", "cre"),
                     email = "brechtdv@gmail.com"),
