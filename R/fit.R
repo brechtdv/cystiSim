@@ -53,10 +53,13 @@ function(n.sim, n.update, target, limit,
       i <- i + 1
       out <- rbind(out,
                    c(ph2m_sim, pl2m_sim, m2p_sim, e2p_sim,
-                     c(tail(mod$out, 1)), ht, dev))
+                   c(tail(mod$out, 1)), ht, dev))
       setTxtProgressBar(pb, i)
     }
   }
+  
+  ## close progress bar
+  close(pb)
 
   cat("\n")
 
